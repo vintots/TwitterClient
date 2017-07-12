@@ -10,6 +10,6 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
      url: "/login",
      cache: false,
      templateUrl: "modules/login/login.html",
-     // controller: 'testAwsController'
+     controller: 'loginController'
    })
 })

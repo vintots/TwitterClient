@@ -1,3 +1,55 @@
-<md-content >
-LOGIN HERE
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br>
+<div layout="row">
+	<div flex="60">
+		<p class="front-welcome-text">
+			<br/><br/>Welcome to Twitter.
+
+Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle
+		</p>
+	</div>
+	
+	<div flex="40">
+	<md-content class="loginBox">
+
+			<form name="loginForm" ng-submit="loginForm.$valid && login()" novalidate>
+
+<div layout="row">
+	<div flex>
+			<md-input-container class="md-block">
+              <label>Phone, Email or username</label>
+              <input type="text" ng-model="user.email" required>
+            </md-input-container>
+			<!-- asdkask -->
+	</div>
+	</div>
+<div layout="row">
+	<div flex>
+			<md-input-container class="md-block">
+              <label>Password</label>
+              <input type="password" ng-model="user.password" required>
+            </md-input-container>
+			<!-- asdkask -->
+	</div>
+</div>
+<div layout="row">
+	<div flex>
+			<center>
+				<div ng-if="userNotFound" class="alert alert-danger" role="alert">
+  					<strong>ERROR!</strong> We could not verify your credentials. Please double-check and try again.
+				</div>
+				<br>
+				<md-button type="submit" class="md-raised md-primary sizecustom">LOGIN</md-button>
+			</center>
+<!-- <br> -->
+	</div>
+</div>
+<div layout="row">
+			<div flex>&nbsp;</div>
+</div>
+</form>
 </md-content>
+	</div>
+
+</div>

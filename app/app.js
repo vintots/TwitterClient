@@ -7,6 +7,9 @@ angular.module('myApp', [
   // 'myApp.view2',
   'ui.router',
   'ngMaterial',
+  'myApp.loginController',
+  'myApp.login.service',
+  'myApp.data.service',
   'myApp.version'
 ])
 

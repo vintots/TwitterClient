@@ -23,3 +23,29 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+md-content.loginBox{
+	width:70%;
+	height:100%;
+	background: inherit;
+}
+
+body{
+	background-color: #000;
+	background-image: url('assets/bg.jpg');
+	background-size: cover;
+}
+
+.sizecustom{
+	height: 45px;	
+	width: 40%;
+	margin-top: -20px;
+}
+
+p.front-welcome-text{
+    color: #fff;
+    font-size: 21px;
+    line-height: 28px;
+    text-shadow: none;
+    font-weight: bold;
+}
