@@ -92,6 +92,7 @@ p.username{
 p.note{
   color: red;
   font-size: 12px;
+  font-weight: bold;
 }
 
 .page{

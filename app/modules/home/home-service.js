@@ -40,4 +40,17 @@ angular.module('myApp.home.service',[])
 				console.log($rootScope.posts);
 			});
 		}
+
+		this.limitEntries = function(arr){
+
+			if(arr.length >100){
+				var range = Number(arr.length)-100;
+				for(var i=0;i<range;i++){
+
+					var index = $rootScope.posts.indexOf(arr[i]);
+  					$rootScope.posts.splice(index, 1); 
+  					console.log('deleted');  
+				}
+			}
+		}
 	});

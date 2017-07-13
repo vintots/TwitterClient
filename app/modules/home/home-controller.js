@@ -30,6 +30,7 @@ angular.module('myApp.home.controller',[])
 
 		$scope.mergeNewPost = function(){
 			homeService.mergeNewPost();
+			homeService.limitEntries($rootScope.posts);
 			$rootScope.thereIsNewPost = false;
 			$rootScope.newEntry=false;
 		}
