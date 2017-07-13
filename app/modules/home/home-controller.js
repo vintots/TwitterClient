@@ -28,6 +28,7 @@ angular.module('myApp.home.controller',[])
 			$rootScope.loggedInUser=false;
 			User.deleteEntry();
 			$state.go('login');
+			location.reload(); //reinitialized all scopes and stop all background processes
 		}
 
 		$scope.mergeNewPost = function(){
