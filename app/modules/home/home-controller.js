@@ -5,16 +5,17 @@ angular.module('myApp.home.controller',[])
 											$rootScope,
 											$state
 											){
-		if(angular.isDefined($rootScope.loggedInUser)){
 
-			$scope.posts = homeService.getPosts();
+		if(angular.isDefined($rootScope.loggedInUser)){
+			
+			homeService.periodicTweets();
+			$rootScope.posts = homeService.getPosts();
 
 			$scope.tweet = function(){
-				// console.log($scope.new_post);
+
 				if(angular.isDefined($scope.new_post)){
-					$scope.posts.push(homeService.formatData($scope.new_post,$scope.posts.length));
+					$rootScope.posts.push(homeService.formatData($scope.new_post,$rootScope.posts.length));
 					$scope.new_post='';
-					// console.log($scope.posts);
 				}
 			}
 
@@ -25,6 +26,12 @@ angular.module('myApp.home.controller',[])
 		$scope.logout = function(){
 			$rootScope.loggedInUser=false;
 			$state.go('login');
+		}
+
+		$scope.mergeNewPost = function(){
+			homeService.mergeNewPost();
+			$rootScope.thereIsNewPost = false;
+			$rootScope.newEntry=false;
 		}
 
 

@@ -57,6 +57,13 @@ body, html {
   width: 10%;
   border-radius: 30px;
 }
+
+.newTweet{
+  height: 15px; 
+  width: 100%;
+  border-radius: 30px;
+}
+
 p.front-welcome-text{
     color: #fff;
     font-size: 21px;

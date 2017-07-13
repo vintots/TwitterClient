@@ -39,7 +39,7 @@
 			 		</div>
 			 		<div layout="row" align="right">
 			 			<div flex="30" align="left">
-			 				<p class="note">Minimum length of post 6.</p>
+			 				<p class="note">Minimum length of tweet: 6.</p>
 			 			</div>
 			 			<div flex="70">
 					 		<md-button type="submit" class="md-raised md-primary sizeTweet" ng-disabled="!new_post">TWEET</md-button>
@@ -48,8 +48,11 @@
 			 		</form>
 			 	</md-whiteframe>
 		</md-content>
+		
+		<md-button type="button" class="md-raised md-primary newTweet" ng-if="thereIsNewPost"  ng-click="mergeNewPost()">VIEW {{postNewLength}} new Tweet</md-button>
+		
 			<md-content flex layout-padding>
-			 	<md-whiteframe class="md-whiteframe-1dp"  layout layout-align="left" ng-repeat="post in posts  | orderBy: '-id'">
+			 	<md-whiteframe class="md-whiteframe-1dp"  layout layout-align="left" ng-repeat="post in posts   | orderBy: '-id' track by $index">
    				 	<div layout="row">
 	   				 		<div flex="20">
 	   				 			<img ng-src="{{post.image}}" class="profilepic">

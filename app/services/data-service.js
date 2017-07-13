@@ -32,16 +32,12 @@ angular.module('myApp.data.service', [])
 		return users;
 		}
 
-		this.generateEntry = function(isNew){
+		this.generateEntry = function(){
 			var firstName= faker.name.lastName();
 			var lastName= faker.name.lastName();
 			var fullName = firstName+' '+lastName;
-			if(angular.isDefined(isNew)){
-				isNew = true;
-			}else{
-				isNew = false;
-			}
-			return {'username':lastName,'fullname':fullName,'post': faker.lorem.sentence(),'date': faker.date.recent(),'image':faker.image.avatar(),'is_new': isNew};
+			
+			return {'username':lastName,'fullname':fullName,'post': faker.lorem.sentence(),'date': faker.date.recent(),'image':faker.image.avatar()};
 		}
 
 		this.postCollection = function(){
