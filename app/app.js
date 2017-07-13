@@ -9,6 +9,7 @@ angular.module('myApp', [
   'myApp.data.service',
   'myApp.home.controller',
   'myApp.home.service',
+  'myApp.user.model',
   'myApp.version'
 ])
 

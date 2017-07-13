@@ -5,6 +5,10 @@ angular.module('myApp.loginController', [])
 											loginService
 											){
 
+		if(loginService.checkedLoggedInUser()){
+			$state.go('home');
+		}
+
 		$scope.login = function(){
 			$scope.userNotFound = false;
 			if(angular.isDefined($scope.user.email) && angular.isDefined($scope.user.password)){

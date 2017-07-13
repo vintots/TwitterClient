@@ -3,7 +3,8 @@ angular.module('myApp.home.controller',[])
 											homeService,
 											$scope,
 											$rootScope,
-											$state
+											$state,
+											User
 											){
 
 		if(angular.isDefined($rootScope.loggedInUser)){
@@ -25,6 +26,7 @@ angular.module('myApp.home.controller',[])
 
 		$scope.logout = function(){
 			$rootScope.loggedInUser=false;
+			User.deleteEntry();
 			$state.go('login');
 		}
 
