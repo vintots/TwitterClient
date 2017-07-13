@@ -7,8 +7,8 @@ angular.module('myApp.home.service',[])
 			return dataService.postCollection();
 		}
 
-		this.formatData = function(post){
+		this.formatData = function(post,arraySize){
 
-			return {'username':$rootScope.loggedInUser.username,'fullname':$rootScope.loggedInUser.fullname,'post': post,'date': new Date(),'image':$rootScope.loggedInUser.image,'is_new': false};
+			return {'id':parseInt(arraySize),'username':$rootScope.loggedInUser.username,'fullname':$rootScope.loggedInUser.fullname,'post': post,'date': new Date(),'image':$rootScope.loggedInUser.image,'is_new': false};
 		}
 	});

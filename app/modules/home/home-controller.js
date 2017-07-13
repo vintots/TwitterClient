@@ -7,13 +7,14 @@ angular.module('myApp.home.controller',[])
 											){
 		if(angular.isDefined($rootScope.loggedInUser)){
 
-			$scope.posts = angular.copy(homeService.getPosts());
+			$scope.posts = homeService.getPosts();
 
 			$scope.tweet = function(){
 				// console.log($scope.new_post);
 				if(angular.isDefined($scope.new_post)){
-					$scope.posts.push(homeService.formatData($scope.new_post));
+					$scope.posts.push(homeService.formatData($scope.new_post,$scope.posts.length));
 					$scope.new_post='';
+					// console.log($scope.posts);
 				}
 			}
 

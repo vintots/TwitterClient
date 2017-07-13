@@ -38,6 +38,8 @@ angular.module('myApp.data.service', [])
 			var fullName = firstName+' '+lastName;
 			if(angular.isDefined(isNew)){
 				isNew = true;
+			}else{
+				isNew = false;
 			}
 			return {'username':lastName,'fullname':fullName,'post': faker.lorem.sentence(),'date': faker.date.recent(),'image':faker.image.avatar(),'is_new': isNew};
 		}
@@ -45,7 +47,9 @@ angular.module('myApp.data.service', [])
 		this.postCollection = function(){
 			
 			for(var i=0;i<10;i++){
-				posts.push(this.generateEntry());
+				var entry = this.generateEntry();
+				entry.id =i;
+				posts.push(entry);
 			}
 
 			if(posts.length > 0){
