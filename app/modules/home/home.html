@@ -1,1 +1,89 @@
-asdsadas
+
+<br/>
+	<div layout="row">
+		<div flex="20">
+			<md-content flex layout-padding>
+			 	<md-whiteframe class="md-whiteframe-1dp"  layout layout-align="left">
+   				 	<div layout="row">
+   				 		<div flex="10">
+   				 			<img class="profilepic" ng-src="{{loggedInUser.image}}">
+   				 		</div>
+   				 	</div>
+   				 	<div layout="row">
+   				 		<div flex>
+   				 			<label>{{loggedInUser.fullname | uppercase}}</label><br/>
+   				 			<p class="username">@{{loggedInUser.username}}</p>
+   				 		</div>
+   				 	</div>
+   				 	<div layout="row">
+   				 		<div flex><br/>
+   				 			<md-button type="button" class="md-raised md-primary sizeTweet" ng-click="logout()">Logout</md-button>
+   				 		</div>
+   				 	</div>
+ 				</md-whiteframe>
+
+			 </md-content>
+			
+		</div>
+		<div flex="2">&nbsp;</div>
+		<div flex="50">
+		<div class="page">
+		<md-content flex layout-padding>
+			 	<md-whiteframe class="md-whiteframe-1dp"  layout layout-align="left">
+			 	<form name="tweetForm" ng-submit="tweetForm.$valid && tweet()" novalidate>
+			 		<div layout="row">
+			 			<div flex>
+					 		<textarea class="form-control"  minlength="6" cols="80" rows="3" ng-model="new_post"  placeholder="What's happening ?" required> </textarea>
+
+			 			</div>
+			 		</div>
+			 		<div layout="row" align="right">
+			 			<div flex="30" align="left">
+			 				<p class="note">Minimum length of post 6.</p>
+			 			</div>
+			 			<div flex="70">
+					 		<md-button type="submit" class="md-raised md-primary sizeTweet" ng-disabled="!new_post">TWEET</md-button>
+			 			</div>
+			 		</div>
+			 		</form>
+			 	</md-whiteframe>
+		</md-content>
+			<md-content flex layout-padding>
+			 	<md-whiteframe class="md-whiteframe-1dp"  layout layout-align="left" ng-repeat="post in posts  | orderBy: '-post.date'">
+   				 	<div layout="row">
+	   				 		<div flex="20">
+	   				 			<img ng-src="{{post.image}}" class="profilepic">
+	   				 		</div>
+	   				 		<div flex="10">&nbsp;</div>
+	   				 		<div flex>
+   				 				<label>{{post.fullname}}</label>  
+   				 			</div>
+   				 			<div flex="10">
+   				 				<p class="username">@{{post.username}}</p>
+   				 			</div>
+   				 	</div>
+   				 	<div layout="row">
+   				 		<div flex>
+   				 		<br/>
+   				 			<p class="postContent">{{post.post}}</p><br/>
+
+   				 		</div>
+   				 	</div>
+   				 
+   				 	<span class="datetime">&nbsp;&nbsp;&nbsp;&nbsp;
+   				 	&nbsp;&nbsp;&nbsp;&nbsp;
+   				 	 {{post.date | date:'MM/dd/yyyy hh:mm a'}}</span>
+ 				</md-whiteframe>
+			 </md-content>
+			 </div>
+		</div>
+		<div flex="2">&nbsp;</div>
+		<div flex="20">
+			<!-- <md-content flex layout-padding>
+			 	<md-whiteframe class="md-whiteframe-1dp"  layout layout-align="left">
+   				 	<span>.md-whiteframe-1dp</span>
+ 				</md-whiteframe>
+			 </md-content> -->
+			 &nbsp;
+		</div>
+	</div>
